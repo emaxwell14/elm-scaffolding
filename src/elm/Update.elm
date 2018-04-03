@@ -2,19 +2,21 @@ module Update exposing (..)
 
 import Routing exposing (parseLocation)
 import Msgs exposing (..)
+import Home.Update exposing (update)
 
 
 update msg model =
     case msg of
-        Msgs.OnLocationChange location ->
+        OnLocationChange location ->
             let
                 newRoute =
                     parseLocation location
             in
                 ( { model | route = newRoute }, Cmd.none )
 
-        Msgs.Increment ->
-            ( { model | count = model.count + 1 }, Cmd.none )
-
-        Msgs.Decrement ->
-            ( { model | count = model.count - 1 }, Cmd.none )
+        HomeMsg subMsg ->
+            let
+                ( updatedModel, homeCmd ) =
+                    Home.Update.update subMsg model.homeModel
+            in
+                ( { model | homeModel = updatedModel }, Cmd.map HomeMsg homeCmd )

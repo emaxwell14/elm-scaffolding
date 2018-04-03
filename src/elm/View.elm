@@ -3,7 +3,7 @@ module View exposing (..)
 import Html exposing (Html, div, text)
 import Models exposing (Model)
 import Msgs exposing (Msg)
-import Home
+import Home.Count exposing (view)
 
 
 view : Model -> Html Msg
@@ -16,7 +16,7 @@ page : Model -> Html Msg
 page model =
     case model.route of
         Models.Home ->
-            Home.view model.count
+            Html.map Msgs.HomeMsg (Home.Count.view model.homeModel)
 
         Models.NotFoundRoute ->
             notFoundView

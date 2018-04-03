@@ -3,14 +3,14 @@ module Models exposing (..)
 
 type alias Model =
     { route : Route
-    , count : Int
+    , homeModel : Int
     }
 
 
 initialModel : Route -> Model
 initialModel route =
     { route = route
-    , count = 0
+    , homeModel = 0
     }
 
 

@@ -1,10 +1,10 @@
-module Home exposing (..)
+module Home.Count exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Hello exposing (hello)
-import Msgs exposing (Msg)
+import Home.Hello exposing (hello)
+import Home.Msgs exposing (Msg)
 
 
 view : Int -> Html Msg
@@ -14,8 +14,8 @@ view count =
             [ div [ class "col-xs-12" ]
                 [ div [ class "jumbotron" ]
                     [ hello count
-                    , createButton Msgs.Increment "Increment"
-                    , createButton Msgs.Decrement "Decrement"
+                    , createButton Home.Msgs.Increment "Increment"
+                    , createButton Home.Msgs.Increment "Decrement"
                     ]
                 ]
             ]
