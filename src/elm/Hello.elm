@@ -1,4 +1,4 @@
-module Components.Hello exposing (..)
+module Hello exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -8,7 +8,7 @@ import Html.Attributes exposing (..)
 
 
 hello : Int -> Html a
-hello model =
+hello count =
     div
         []
         [ div
@@ -17,6 +17,6 @@ hello model =
             [ text ("Hello Elm")
             ]
         , div []
-            [ text ("Count: " ++ (toString model))
+            [ text ("Count: " ++ (toString count))
             ]
         ]
