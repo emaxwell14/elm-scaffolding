@@ -1,8 +1,10 @@
 module Home.Update exposing (..)
 
 import Home.Msgs exposing (..)
+import Home.Models exposing (Model)
 
 
+update : Msg -> Model -> Model Cmd
 update msg model =
     case msg of
         Increment ->

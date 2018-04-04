@@ -4,18 +4,19 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Home.Hello exposing (hello)
-import Home.Msgs exposing (Msg)
+import Home.Msgs exposing (..)
+import Home.Models exposing (..)
 
 
-view : Int -> Html Msg
-view count =
+view : Home.Models.Model -> Html Msg
+view model =
     div [ class "container", style [ ( "margin-top", "30px" ), ( "text-align", "center" ) ] ]
         [ div [ class "row" ]
             [ div [ class "col-xs-12" ]
                 [ div [ class "jumbotron" ]
-                    [ hello count
-                    , createButton Home.Msgs.Increment "Increment"
-                    , createButton Home.Msgs.Increment "Decrement"
+                    [ hello model.count
+                    , createButton Increment "Increment"
+                    , createButton Decrement "Decrement"
                     ]
                 ]
             ]

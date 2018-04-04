@@ -3,8 +3,10 @@ module Update exposing (..)
 import Routing exposing (parseLocation)
 import Msgs exposing (..)
 import Home.Update exposing (update)
+import Models exposing (Model)
 
 
+update : Msg -> Model -> Model Cmd
 update msg model =
     case msg of
         OnLocationChange location ->

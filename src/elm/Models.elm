@@ -1,21 +1,19 @@
 module Models exposing (..)
 
+import Home.Models exposing (..)
+
 
 type alias Model =
     { route : Route
-    , homeModel : Int
+    , homeModel : Home.Models.Model
     }
 
 
-initialModel : Route -> Model
-initialModel route =
+initialModel : Route -> Model -> Model
+initialModel route homeModel =
     { route = route
-    , homeModel = 0
+    , homeModel = Home.Models.initialModel
     }
-
-
-type alias TaskId =
-    String
 
 
 type Route
