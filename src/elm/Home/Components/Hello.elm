@@ -1,4 +1,4 @@
-module Home.Hello exposing (..)
+module Home.Components.Hello exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)

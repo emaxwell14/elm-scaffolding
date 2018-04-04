@@ -1,14 +1,14 @@
-module Home.Count exposing (..)
+module Home.View exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
-import Home.Hello exposing (hello)
+import Home.Components.Hello exposing (hello)
 import Home.Msgs exposing (..)
-import Home.Models exposing (..)
+import Home.Models exposing (Model)
 
 
-view : Home.Models.Model -> Html Msg
+view : Model -> Html Msg
 view model =
     div [ class "container", style [ ( "margin-top", "30px" ), ( "text-align", "center" ) ] ]
         [ div [ class "row" ]
