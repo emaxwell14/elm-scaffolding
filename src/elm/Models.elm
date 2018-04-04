@@ -9,8 +9,8 @@ type alias Model =
     }
 
 
-initialModel : Route -> Model -> Model
-initialModel route homeModel =
+initialModel : Route -> Model
+initialModel route =
     { route = route
     , homeModel = Home.Models.initialModel
     }

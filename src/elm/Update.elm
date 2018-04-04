@@ -6,7 +6,7 @@ import Home.Update exposing (update)
 import Models exposing (Model)
 
 
-update : Msg -> Model -> Model Cmd
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         OnLocationChange location ->
